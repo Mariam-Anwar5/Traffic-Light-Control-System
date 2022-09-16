@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\DIO.c" -xcl_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.xcl" -macro_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\DIO.c" -o "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.xcl.rsp
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\main.c" -xcl_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.xcl" -macro_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\main.c" -o "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\startup_ewarm.c" -xcl_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.xcl" -macro_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\startup_ewarm.c" -o "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.tmp"
+  rspfile_name = C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\SysTick.c" -xcl_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.xcl" -macro_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\SysTick.c" -o "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.tmp"
+  rspfile_name = C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.xcl.rsp
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\Timer0.c" -xcl_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.xcl" -macro_file "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\Timer0.c" -o "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.tmp"
+  rspfile_name = C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.xcl.rsp
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.pbi : INDEXER C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.xcl |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\DIO.c
+  flags = "-out=C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.pbi" -f "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.xcl"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\main.c
+  flags = "-out=C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.pbi" -f "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.xcl"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.xcl |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\startup_ewarm.c
+  flags = "-out=C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.pbi" -f "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.xcl"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.pbi : INDEXER C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.xcl |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\SysTick.c
+  flags = "-out=C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.pbi" -f "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.xcl"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.pbi : INDEXER C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.xcl |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\drivers\Timer0.c
+  flags = "-out=C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.pbi" -f "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.xcl"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbw : MAKEBROWSE C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbd
+  flags = "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbd" -output "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbw"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part0.pbi : PDBLINK C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.pbi |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.pbi
+  flags = -M "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part0.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\DIO.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\main.pbi"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part1.pbi : PDBLINK C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.pbi |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.pbi
+  flags = -M "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part1.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\startup_ewarm.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\SysTick.pbi"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part2.pbi : PDBLINK C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.pbi
+  flags = -M "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part2.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\Timer0.pbi"
+
+build C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbd : PDBLINK C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part0.pbi |  $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part1.pbi $
+C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part2.pbi
+  flags = -M "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38.pbd" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part0.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part1.pbi" "C$:\Users\pc\Documents\Mechatronics\2nd$ Mechatromics$ (Term$ 2)\Introduction$ to$ Embedded$ Systems\Project\Team$ (38)\Debug\BrowseInfo\team38_part2.pbi"
+
